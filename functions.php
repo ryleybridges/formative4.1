@@ -38,7 +38,6 @@
     add_theme_support( 'header' );
 
     // Logo
-
     function addCustomLogo_Embrace() {
         add_theme_support( 'custom-logo');
     }

@@ -2,6 +2,7 @@
 
     function mytheme_customize_register($wp_customize){
 
+        // Adding settings
         $wp_customize->add_setting('embrace_backgroundColour', array(
             'default' => '#e6e6e6',
             'transport' => 'refresh'
@@ -12,7 +13,9 @@
             'transport' => 'refresh'
         ));
 
+        // Adding sections
 
+        // Adding controls
         $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'embrace_backgroundColour', array(
 	           'label'      => __( 'Background Colour', 'EmbraceCustom' ),
                'description' => 'Change the background colour',

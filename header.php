@@ -8,7 +8,7 @@
     <body>
 
         <?php if(has_nav_menu('top_navigation')): ?>
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark" role="navigation">
+            <nav class="navbar navbar-expand-md navbar-dark navColour" role="navigation">
                 <div class="container">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -17,7 +17,7 @@
                         <?php if(!the_custom_logo()): ?>
                             <a class="navbar-brand" href="#"><?php echo get_bloginfo('name'); ?></a>
                         <?php else: ?>
-                            <?php the_custom_logo(); ?>
+                            <a class="navbar-brand" href="#"><?php the_custom_logo(); ?></a>
                         <?php endif; ?>
 
                     <?php
