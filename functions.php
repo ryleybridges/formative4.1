@@ -11,12 +11,12 @@
 
     add_action('wp_enqueue_scripts', 'addCustomThemeFiles_Embrace');
 
-    // Menus
+    // Menus/Navbar
     function addCustomMenus_Embrace(){
         add_theme_support('menus');
-        // register_nav_menu('top_navigation',__('Top navigation is at the top of each page', 'EmbraceCustom'));
+        register_nav_menu('top_navigation',__('Top navigation is at the top of each page', 'EmbraceCustom'));
         // register_nav_menu('side_navigation',__('Side navigation is on the side of each page', 'EmbraceCustom'));
-        // register_nav_menu('bottom_navigation',__('Bottom navigation is at the bottom of each page', 'Embrace Custom'));
+        register_nav_menu('bottom_navigation',__('Bottom navigation is at the bottom of each page', 'EmbraceCustom'));
     };
 
     add_action('after_setup_theme', 'addCustomMenus_Embrace');
@@ -34,3 +34,17 @@
     };
 
     remove_action('shutdown', 'wp_ob_end_flush_all', 1);
+
+    add_theme_support( 'header' );
+
+    // Logo
+
+    function addCustomLogo_Embrace() {
+        add_theme_support( 'custom-logo');
+    }
+    add_action( 'after_setup_theme', 'addCustomLogo_Embrace' );
+
+    add_image_size('embracedesign-logo', 150, 150);
+    add_theme_support('custom-logo', array(
+        'size' => 'embracedesign-logo'
+    ));
