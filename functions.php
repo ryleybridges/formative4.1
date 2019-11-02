@@ -10,12 +10,11 @@
     }
 
     add_action('wp_enqueue_scripts', 'addCustomThemeFiles_Embrace');
-
     // Menus/Navbar
     function addCustomMenus_Embrace(){
         add_theme_support('menus');
         register_nav_menu('top_navigation',__('Top navigation is at the top of each page', 'EmbraceCustom'));
-        // register_nav_menu('side_navigation',__('Side navigation is on the side of each page', 'EmbraceCustom'));
+        register_nav_menu('side_navigation',__('Side navigation is on the side of each page', 'EmbraceCustom'));
         register_nav_menu('bottom_navigation',__('Bottom navigation is at the bottom of each page', 'EmbraceCustom'));
     };
 
@@ -47,3 +46,5 @@
     add_theme_support('custom-logo', array(
         'size' => 'embracedesign-logo'
     ));
+
+    add_theme_support('post-thumbnails', array('post'));
