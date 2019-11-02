@@ -10,6 +10,9 @@
     }
 
     add_action('wp_enqueue_scripts', 'addCustomThemeFiles_Embrace');
+
+    require_once get_template_directory() . '/inc/customizer.php';
+
     // Menus/Navbar
     function addCustomMenus_Embrace(){
         add_theme_support('menus');
@@ -48,3 +51,19 @@
     ));
 
     add_theme_support('post-thumbnails', array('post'));
+
+    // Images
+    $customHeaderDefaults = array(
+        'width' => 1280,
+        'height' => 720,
+        'default-image' => get_template_directory_uri() . '/assests/images/bluelakes.jpg'
+    );
+    add_theme_support('custom-header', $customHeaderDefaults);
+
+    register_default_headers(array (
+        'defaultImage' => array(
+            'url' => get_template_directory_uri() . '/assests/images/bluelakes.jpg',
+            'thumbnail_url' => get_template_directory_uri() . '/assests/images/bluelakes.jpg',
+            'description' => __('The default image for the custom header.', 'EmbraceCustom')
+        )
+    ));
