@@ -1,10 +1,5 @@
 #mainBody {
-    background-color: #e6e6e6;
-    height: 100vh;
-}
-
-.navColour {
-    background-color: #4d4d4d;
+    height: 75vh;
 }
 
 #sideNav li{
@@ -33,4 +28,14 @@
 
 #sideNav li.current-menu-item a{
     color: white;
+}
+
+.headerImage {
+    width: 100vw;
+    height: 60vh;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

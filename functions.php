@@ -67,3 +67,34 @@
             'description' => __('The default image for the custom header.', 'EmbraceCustom')
         )
     ));
+
+    add_theme_support('wp-block-styles');
+
+
+    // Custom Posts
+    function add_custom_post_types(){
+        $args = array (
+            'labels' => array(
+                'name' => 'Products',
+                'singular_name' => 'Product',
+                'add_new_item' => 'Add New Product'
+            ),
+            'description' => 'All products in our site',
+            'public' => true,
+            'hierarchical' => true,
+            'show_in_nav_menus' => false,
+            'show_in_rest' => true,
+            'menu_position' => 6,
+            'menu_icon' => 'dashicons-cart',
+            'supports' => array(
+                'title',
+                'editor',
+                'thumbnail',
+                'post-formats'
+            ),
+            'delete_with_user' => false
+        );
+        register_post_type('product', $args);
+    }
+
+    add_action('init', 'add_custom_post_types');
