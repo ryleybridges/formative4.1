@@ -50,7 +50,7 @@
         'size' => 'embracedesign-logo'
     ));
 
-    add_theme_support('post-thumbnails', array('post'));
+    add_theme_support('post-thumbnails', array('post', 'product'));
 
     // Images
     $customHeaderDefaults = array(
